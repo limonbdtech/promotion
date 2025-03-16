@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Casino World</title>
+    <style>
+        /* Prevent horizontal scrolling */
+        html, body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d1628;
+            color: #fff;
+        }
+
+        /* Apply box-sizing to prevent width issues */
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
+    color: white;
+}
+
+.nav-left .menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.live-chat .chat-btn {
+    background-color: gold;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+    
+
+        
+
+        .banner {
+            width: 100%;
+            height: 180px;
+            background: url('./banner/image_218114.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .news {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #152239;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .fixed_news {
+            font-size: 18px;
+            font-weight: bold;
+            color: gold;
+        }
+
+        .scrolling-news {
+            overflow: hidden;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .news-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        .breaking-news-wrapper {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .breaking-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #152239;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .sports-section {
+            padding: 15px;
+            background-color: #0d1628;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+        .sports-item {
+            background-color: #1a2944;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .sports-item img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .favourites-section {
+            padding: 15px;
+            background-color: #0d1628;
+            text-align: center;
+        }
+
+        .favourite-item {
+            background-color: #1a2944;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .favourite-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .download-btn {
+            background-color: gold;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .featured-games {
+            padding: 15px;
+            background-color: #0d1628;
+        }
+
+        .games-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .game-item {
+            background-color: #1a2944;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            flex: 1 1 calc(50% - 10px);
+        }
+
+        .game-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #111;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    justify-content: flex-start;
+}
+
+.footer-right {
+    justify-content: flex-end;
+}
+
+.footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lang-btn img {
+    width: 30px;
+    height: 26px;
+    margin-right: 6px;
+}
+
+.signup-btn, .login-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.signup-btn {
+    background-color: white;
+    color: black;
+}
+
+.login-btn {
+    background-color: gold;
+    color: black;
+}
+
+.login-btn , .signup-btn , .lang-btn{
+    text-decoration:none ;
+}
+    </style>
+</head>
+<body>
+
+  
+
+
+    <header>
+        <nav class="nav-left">
+            <button class="menu-btn">&#9776;</button>
+        </nav>
+        <div class="logo">
+            <h1>MCW</h1>
+        </div>
+        <div class="live-chat">
+            <button class="chat-btn">Live Chat</button>
+        </div>
+    </header>
+
+
+    <div class="banner"></div>
+
+    <div class="news">
+        <div class="fixed_news">
+            <p>Update</p>
+        </div>
+
+        <div class="scrolling-news">
+            <div class="news-content">
+                <div class="breaking-news-wrapper">
+                    <span class="breaking-icon">&#9889;</span> 
+                    <span>LiveChat
+
+                        IPL fever is here! Get a chance to win up to 100,000,000 BDT & 3 Yamaha 15 v4 when you place bets on any IPL matches!
+                        
+                        MCW Advisory: Starting from March 13, 2025, the deposit requirement for the MCW Lucky Spin event will be updated from 600 BDT to 1,000 BDT. This change applies to rewards issued from this date onward. 
+                        
+                        MCW Advisory: Having problems accessing the MCW site? Visit https://mcwlinks.com/bn/ to see the latest active links and continue to enjoy your favorite games!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="#">Sports</a>
+        <a href="#">Casino</a>
+        <a href="#">Slot</a>
+        <a href="#">Table</a>
+        <a href="#">Crash</a>
+        <a href="#">Lotto</a>
+    </div>
+
+    <!-- Sports Section -->
+    <div class="sports-section">
+        <h3>Sports</h3>
+        <div class="sports-grid">
+            <div class="sports-item">
+                <img src="icon-exchange.png" alt="Exchange">
+                <p>Exchange</p>
+            </div>
+            <div class="sports-item">
+                <img src="icon-sportbook.png" alt="Sportsbook">
+                <p>Sportsbook</p>
+            </div>
+            <div class="sports-item">
+                <img src="icon-sbtech.png" alt="SBO">
+                <p>SBO</p>
+            </div>
+            <div class="sports-item">
+                <img src="icon-horsebook.png" alt="Horsebook">
+                <p>Horsebook</p>
+            </div>
+            <div class="sports-item">
+                <img src="icon-nst.png" alt="BTI">
+                <p>BTI</p>
+            </div>
+            <div class="sports-item">
+                <img src="icon-cmd.png" alt="CMD">
+                <p>CMD</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="favourites-section">
+        <h3>Favourites</h3>
+        <div class="favourite-item">
+            <img src="favorite/image_149656.jpg" alt="MCW App Ready">
+            <p>MCW IS APP READY! LOGIN VIA BIOMETRICS</p>
+            <button class="download-btn">Download Now</button>
+        </div>
+    </div>
+
+    <div class="featured-games">
+        <h3>Featured Games</h3>
+        <div class="games-grid">
+            <div class="game-item">
+                <img src="./favorite/image_149656.jpg" alt="Golden Queen">
+                <p>Most Famous - Golden Queen</p>
+            </div>
+            <div class="game-item">
+                <img src="./favoritegames/image_216546.jpg" alt="Funny Monkey">
+                <p>Monthly Pick - Funny Monkey</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <a href="https://mcw85229381aff.com/af/OJxhUVg9/join" class="lang-btn">
+                <img src="./flag.png" alt="BD Flag"> BDT English
+            </a>
+        </div>
+        <div class="footer-center">
+
+            <a href="https://mcw85229381aff.com/af/OJxhUVg9/join" class="signup-btn">Sign Up</a>
+        </div>
+        <div class="footer-right">
+            <a  href="https://mcw85229381aff.com/af/OJxhUVg9/join" class="login-btn">Login</a>
+        </div>
+    </footer>
+
+    <script>
+        let bannerImages = [
+            './banner/image_190236.jpg',
+            './banner/image_212801.jpg',
+            './banner/image_217597.jpg',
+            './banner/image_217633.jpg',
+            './banner/image_218114.jpg'
+        ];
+        let currentIndex = 0;
+
+        function changeBannerImage() {
+            currentIndex = (currentIndex + 1) % bannerImages.length;
+            document.querySelector('.banner').style.backgroundImage = `url('${bannerImages[currentIndex]}')`;
+        }
+
+        setInterval(changeBannerImage, 3000);
+    </script>
+
+</body>
+</html>
